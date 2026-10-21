@@ -1,0 +1,243 @@
+databaseChangeLog:
+  - changeSet:
+      id: 008-initial-data
+      author: timofey chervov
+      context: "@dev"
+
+      changes:
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: id
+                  value: "23b22f9d-1e6c-4a4c-8f46-f0828265042d"
+              - column:
+                  name: name
+                  value: "Java"
+              - column:
+                  name: description
+                  value: "Курс по Java"
+
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: id
+                  value: "884abfa2-5235-4989-a67e-cae69aa9778b"
+              - column:
+                  name: name
+                  value: "Docker"
+              - column:
+                  name: description
+                  value: "Курс по Docker"
+
+        - insert:
+            tableName: students
+            columns:
+              - column:
+                  name: id
+                  value: "ff9faec3-06eb-42ef-b1eb-f8566efb4e4e"
+              - column:
+                  name: first_name
+                  value: "Иван"
+              - column:
+                  name: last_name
+                  value: "Иванов"
+
+        - insert:
+            tableName: students
+            columns:
+              - column:
+                  name: id
+                  value: "c26f47f9-2e1c-4a90-91ec-46ab380ff46a"
+              - column:
+                  name: first_name
+                  value: "Антон"
+              - column:
+                  name: last_name
+                  value: "Антонов"
+
+        - insert:
+            tableName: students
+            columns:
+              - column:
+                  name: id
+                  value: "89824b1c-755a-4c7a-87ed-26fc1af89515"
+              - column:
+                  name: first_name
+                  value: "Андрей"
+              - column:
+                  name: last_name
+                  value: "Андреев"
+
+        - insert:
+            tableName: teachers
+            columns:
+              - column:
+                  name: id
+                  value: "a384a93d-e5d1-439c-a129-26c159aebad1"
+              - column:
+                  name: first_name
+                  value: "Дмитрий"
+              - column:
+                  name: last_name
+                  value: "Дмитриев"
+
+        - insert:
+            tableName: teachers
+            columns:
+              - column:
+                  name: id
+                  value: "eddb0b99-2807-49b1-a3ec-c2e7a2a867e4"
+              - column:
+                  name: first_name
+                  value: "Николай"
+              - column:
+                  name: last_name
+                  value: "Николаев"
+
+        - insert:
+            tableName: groups
+            columns:
+              - column:
+                  name: id
+                  value: "9983e404-10cd-4af2-a414-e26c556f7e42"
+              - column:
+                  name: name
+                  value: "Java group"
+
+        - insert:
+            tableName: groups
+            columns:
+              - column:
+                  name: id
+                  value: "da9bfc7f-1d52-46fe-a340-7fd863a4a4ba"
+              - column:
+                  name: name
+                  value: "Docker group"
+
+        - insert:
+            tableName: schedules
+            columns:
+              - column:
+                  name: id
+                  value: "0c47539b-4875-47df-9a1b-ae04a1abed0d"
+              - column:
+                  name: group_id
+                  value: "9983e404-10cd-4af2-a414-e26c556f7e42"
+              - column:
+                  name: teacher_id
+                  value: "a384a93d-e5d1-439c-a129-26c159aebad1"
+              - column:
+                  name: course_id
+                  value: "23b22f9d-1e6c-4a4c-8f46-f0828265042d"
+              - column:
+                  name: start_date
+                  value: "2026-10-21T10:30:00"
+              - column:
+                  name: end_date
+                  value: "2026-10-21T12:00:00"
+
+        - insert:
+            tableName: schedules
+            columns:
+              - column:
+                  name: id
+                  value: "ac7827bf-1e75-405f-b65c-3bdf28b06159"
+              - column:
+                  name: group_id
+                  value: "9983e404-10cd-4af2-a414-e26c556f7e42"
+              - column:
+                  name: teacher_id
+                  value: "a384a93d-e5d1-439c-a129-26c159aebad1"
+              - column:
+                  name: course_id
+                  value: "23b22f9d-1e6c-4a4c-8f46-f0828265042d"
+              - column:
+                  name: start_date
+                  value: "2026-10-22T10:30:00"
+              - column:
+                  name: end_date
+                  value: "2026-10-22T12:00:00"
+
+        - insert:
+            tableName: schedules
+            columns:
+              - column:
+                  name: id
+                  value: "609d3ab5-09a8-47a1-aafd-70fe059a4564"
+              - column:
+                  name: group_id
+                  value: "da9bfc7f-1d52-46fe-a340-7fd863a4a4ba"
+              - column:
+                  name: teacher_id
+                  value: "eddb0b99-2807-49b1-a3ec-c2e7a2a867e4"
+              - column:
+                  name: course_id
+                  value: "884abfa2-5235-4989-a67e-cae69aa9778b"
+              - column:
+                  name: start_date
+                  value: "2026-10-23T10:30:00"
+              - column:
+                  name: end_date
+                  value: "2026-10-23T12:00:00"
+
+        - insert:
+            tableName: group_student
+            columns:
+              - column:
+                  name: group_id
+                  value: "9983e404-10cd-4af2-a414-e26c556f7e42"
+              - column:
+                  name: student_id
+                  value: "ff9faec3-06eb-42ef-b1eb-f8566efb4e4e"
+
+        - insert:
+            tableName: group_student
+            columns:
+              - column:
+                  name: group_id
+                  value: "9983e404-10cd-4af2-a414-e26c556f7e42"
+              - column:
+                  name: student_id
+                  value: "c26f47f9-2e1c-4a90-91ec-46ab380ff46a"
+
+        - insert:
+            tableName: group_student
+            columns:
+              - column:
+                  name: group_id
+                  value: "da9bfc7f-1d52-46fe-a340-7fd863a4a4ba"
+              - column:
+                  name: student_id
+                  value: "c26f47f9-2e1c-4a90-91ec-46ab380ff46a"
+
+        - insert:
+            tableName: group_student
+            columns:
+              - column:
+                  name: group_id
+                  value: "da9bfc7f-1d52-46fe-a340-7fd863a4a4ba"
+              - column:
+                  name: student_id
+                  value: "89824b1c-755a-4c7a-87ed-26fc1af89515"
+
+        - insert:
+            tableName: course_group
+            columns:
+              - column:
+                  name: course_id
+                  value: "23b22f9d-1e6c-4a4c-8f46-f0828265042d"
+              - column:
+                  name: group_id
+                  value: "9983e404-10cd-4af2-a414-e26c556f7e42"
+
+        - insert:
+            tableName: course_group
+            columns:
+              - column:
+                  name: course_id
+                  value: "884abfa2-5235-4989-a67e-cae69aa9778b"
+              - column:
+                  name: group_id
+                  value: "da9bfc7f-1d52-46fe-a340-7fd863a4a4ba"
