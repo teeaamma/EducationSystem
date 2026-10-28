@@ -8,6 +8,7 @@ import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.method.annotation.HandlerMethodValidationException;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import java.util.List;
@@ -43,6 +44,19 @@ public class GlobalExceptionHandler {
                 .toList();
 
         return ResponseEntity.badRequest().body(new ValidationErrorResponse(violations, errors));
+    }
+
+    @ExceptionHandler(HandlerMethodValidationException.class)
+    public ResponseEntity<ValidationErrorResponse> handleMethodValidation(HandlerMethodValidationException ex){
+        List<Violation> violations = ex.getParameterValidationResults().stream()
+                .flatMap(result -> result.getResolvableErrors().stream()
+                        .map(violation -> new Violation(
+                                result.getMethodParameter().getParameterName(),
+                                violation.getDefaultMessage()
+                        )))
+                .toList();
+
+        return ResponseEntity.badRequest().body(new ValidationErrorResponse(violations, List.of()));
     }
 
     @ExceptionHandler(PropertyReferenceException.class)
