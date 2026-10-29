@@ -1,0 +1,4 @@
+INSERT INTO groups (id, name)
+VALUES
+    ('66666666-6666-4666-6666-666666666666', 'Java group'),
+    ('77777777-7777-4777-7777-777777777777', 'Spring group');
