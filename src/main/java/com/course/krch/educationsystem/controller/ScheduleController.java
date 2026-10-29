@@ -22,7 +22,7 @@ public class ScheduleController {
 
     @GetMapping
     public Page<ScheduleResponseDto> getAll(
-            @ModelAttribute @ParameterObject ScheduleFilterDto filter,
+            @Valid @ModelAttribute @ParameterObject ScheduleFilterDto filter,
             @ParameterObject Pageable pageable
     ){
         return scheduleService.getAll(filter, pageable);
