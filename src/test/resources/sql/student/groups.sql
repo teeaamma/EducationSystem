@@ -1,0 +1,4 @@
+INSERT INTO groups (id, name)
+VALUES
+    ('77777777-7777-4777-7777-777777777777', 'Spring group'),
+    ('88888888-8888-4888-8888-888888888888', 'Docker group');

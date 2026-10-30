@@ -1,0 +1,1 @@
+TRUNCATE TABLE courses, students, teachers, groups, schedules, group_student, course_group;

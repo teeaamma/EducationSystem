@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - include:
+      file: changes/001-create-courses.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/002-create-students.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/003-create-teachers.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/004-create-groups.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/005-create-schedules.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/006-create-group_student.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/007-create-course_group.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/008-initial-data.yaml
+      relativeToChangelogFile: true

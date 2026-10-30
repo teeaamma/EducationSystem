@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 006-create-group_student
+      author: timofey chervov
+
+      changes:
+        - createTable:
+            tableName: group_student
+            columns:
+              - column:
+                  name: group_id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: group_student_pk
+                    foreignKeyName: group_student_fk_group
+                    references: groups(id)
+
+              - column:
+                  name: student_id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: group_student_pk
+                    foreignKeyName: group_student_fk_student
+                    references: students(id)

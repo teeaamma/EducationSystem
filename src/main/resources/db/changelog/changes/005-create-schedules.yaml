@@ -1,0 +1,74 @@
+databaseChangeLog:
+  - changeSet:
+      id: 005-create-schedules
+      author: timofey chervov
+
+      changes:
+        - createTable:
+            tableName: schedules
+
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: group_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: teacher_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: course_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: start_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: end_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: is_deleted
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+
+        - addForeignKeyConstraint:
+            constraintName: group_schedule_fk
+            baseTableName: schedules
+            baseColumnNames: group_id
+            referencedTableName: groups
+            referencedColumnNames: id
+
+        - addForeignKeyConstraint:
+            constraintName: teacher_schedule_fk
+            baseTableName: schedules
+            baseColumnNames: teacher_id
+            referencedTableName: teachers
+            referencedColumnNames: id
+
+        - addForeignKeyConstraint:
+            constraintName: course_schedule_fk
+            baseTableName: schedules
+            baseColumnNames: course_id
+            referencedTableName: courses
+            referencedColumnNames: id

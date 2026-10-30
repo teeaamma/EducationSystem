@@ -1,0 +1,8 @@
+INSERT INTO students (id, first_name, last_name)
+VALUES ('11111111-1111-4111-1111-111111111111', 'Андрей', 'Андреев');
+
+INSERT INTO groups (id, name)
+VALUES ('66666666-6666-4666-6666-666666666666', 'Java group');
+
+INSERT INTO group_student (group_id, student_id)
+VALUES ('66666666-6666-4666-6666-666666666666', '11111111-1111-4111-1111-111111111111');
